@@ -28,4 +28,32 @@ ___
     \$ git add file1.txt
     \$ git add file2.txt file3.txt
     \$ git commit -m "add 3 files."
-    
+
+###时光机穿梭
+####查看仓库状态
+>git status
+
+查看文件是否被修改，是否有待提交的修改。
+
+####比较版本变动
+>git diff readme.txt
+省略文件名将输出所有文件变动情况
+
+输出：
+>diff --git a/readme.txt b/readme.txt
+index 46d49bf..9247db6 100644
+--- a/readme.txt
++++ b/readme.txt
+@@ -1,2 +1,2 @@
+-Git is a version control system.
++Git is a distributed version control system.
+Git is free software.
+
+>--- a/readme.txt
++++ b/readme.txt
+
+\---表示变动前的文件
++++表示变动后的文件
+>@@ -1,2 +1,2 @@
+
+表示源文件的1-2行与新文件的1-2行有差异
