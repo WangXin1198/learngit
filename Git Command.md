@@ -28,7 +28,7 @@ ___
     \$ git add file1.txt
     \$ git add file2.txt file3.txt
     \$ git commit -m "add 3 files."
-
+___
 ###时光机穿梭
 ####查看仓库状态
 >git status
@@ -64,3 +64,5 @@ Git is free software.
 Git is free software.
 
 变动内容，+表示增加了这一行，-表示删除了这一行，没符号表示此行没有变动。
+
+
