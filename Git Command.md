@@ -37,6 +37,26 @@ ___
 查看文件是否被修改，是否有待提交的修改。
 
 ####比较版本变动
+1.**比较工作区与其他**
+>git diff readme.txt  
+不加参数默认比较工作区与暂存区,因git add后工作区和暂存区没有区别
+
+>git diff HEAD readme.txt
+比较工作区与最新版本库，git commit前均能查到此区别
+
+>git diff commit-id readme.txt
+比较工作区与指定commit-id的差异
+
+2.**比较暂存区与其他**
+>git diff --cached readme.txt
+比较暂存区与最新本地库
+
+>git diff --cached [\<commit-id\>] [\<path>...] 
+比较暂存区与指定commit-id的差异
+
+
+
+
 在 `git add` 修改之前使用 `git diff` 命令查看修改内容。
 >git diff readme.txt
 省略文件名将输出所有文件变动情况
@@ -113,13 +133,8 @@ Git的版本库里存了很多东西，其中最重要的就是称为**stage**�
 
 你可以简单理解为，需要提交的文件修改通通放到暂存区，然后，一次性提交暂存区的所有修改。
 
-####git diff
->git diff  \<filename>   
-对比工作区和暂存区之间的区别，即工作目录中的文件和git add后的修改的区别
-
->git diff HEAD --readme.txt
-对比工作区和版本库里最新版本的区别，即当前工作目录里尚未git add的修改和版本库中最新版本的区别
 ___
 
-###
+###撤销修改
+
 
