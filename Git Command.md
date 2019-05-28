@@ -29,6 +29,7 @@ ___
     \$ git add file2.txt file3.txt
     \$ git commit -m "add 3 files."
 ___
+
 ###时光机穿梭
 ####查看仓库状态
 >git status
@@ -64,5 +65,36 @@ Git is free software.
 Git is free software.
 
 变动内容，+表示增加了这一行，-表示删除了这一行，没符号表示此行没有变动。
+
+####查看提交日志
+查看提交记录, `git log` 命令显示从最近到最远的提交日志;HEAD指针指示当前版本。
+>git log
+
+参数 `--pretty=oneline` 不输出作者信息，只输出commit id、提交说明、当前指针信息，输出更简洁；
+>git log --pretty=oneline
+
+####版本回退
+首先，Git必须知道当前版本是哪个版本，在Git中，用HEAD表示当前版本，上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。
+
+回退到上个版本：
+--hard参数待补充
+>git reset --hard HEAD^
+
+若回退后想返回到最新版本，可以指定commit id，设置为当前版本，commit id 无需完整填写，只需前几位唯一确定一个版本即可：
+>git restet --hard < commit id >  
+
+####命令日志
+Git提供了一个命令 `git reflog` 用来记录你的每一次命令：
+
+    $ git reflog
+    e475afc HEAD@{1}: reset: moving to HEAD^
+    1094adb (HEAD -> master) HEAD@{2}: commit: append GPL
+    e475afc HEAD@{3}: commit: add distributed
+    eaadf4e HEAD@{4}: commit (initial): wrote a readme file
+
+此命令可用来查看特定的版本号，以便回退后可返回“未来”。
+
+___
+
 
 
